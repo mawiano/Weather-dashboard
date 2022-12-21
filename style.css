@@ -5,3 +5,15 @@
   padding-top: 15px;
   color: rgb(255, 255, 255);
 }
+.main-container{
+  display: flex;
+ 
+}
+.card-container{
+  display: flex;
+  justify-content: flex-end;
+  
+}
+.card-group{
+  background-color: rgb(145, 143, 146);
+}
