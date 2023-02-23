@@ -35,17 +35,15 @@ document.getElementById("temp-main").textContent = data.main.temp+" F"
 document.getElementById("humid-main").textContent = data.main.humidity+"%"
 document.getElementById("wind-main").textContent = data.wind.speed+" MPH"
 
-
-      // extract the data we want for today
-
-      // put it somewhere on the screen
-
-
       // extract the lat and lon from the data
 var lon = data.coord.lon
 var lat = data.coord.lat
       // use it to create the other url
-      var baseUrlForFiveDay = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey
-
+      var baseUrlForFiveDay =
+       "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
+       fetch(baseUrlForFiveDay)
+       .then((response) => response.json())
+       .then(function (data) {
+         console.log(data)
     });
-});
+})})
