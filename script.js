@@ -30,8 +30,12 @@ searchBtn.addEventListener("click", function () {
     })
     .then(function (data) {
       console.log(data); // sanity check
-document.getElementById("city-name").textContent = data.name
-document.getElementById("temp").textContent = data.main.temp+" F"
+document.getElementById("city-name").textContent = data.name 
+document.getElementById("temp-main").textContent = data.main.temp+" F"
+document.getElementById("humid-main").textContent = data.main.humidity+"%"
+document.getElementById("wind-main").textContent = data.wind.speed+" MPH"
+
+
       // extract the data we want for today
 
       // put it somewhere on the screen
@@ -43,11 +47,5 @@ var lat = data.coord.lat
       // use it to create the other url
       var baseUrlForFiveDay = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey
 
-      // make a call to the other url
-      // -- then turn the response data into real data
-      // -- then 
-      // -- -- log the data
-      // -- -- extract the info you want from the data
-      // -- -- put it on the screen
     });
 });
