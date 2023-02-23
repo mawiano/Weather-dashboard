@@ -30,7 +30,7 @@
    <div class="col-10"  id="results-container">
     <div class="main-card">
         <div class="card-body" id="current-stats">
-          <h2>City Name and date</h2>
+          <h2 id="city-name">City Name and date</h2>
             <p>Temperature: <span id="temp"></span></p>
             <p>Humidity: <span id="humidity"></span></p>
             <p>Wind Speed: <span id="wind"></span></p>
@@ -40,31 +40,16 @@
 
 
 
-  <div class="card-container text-white">
-  
-  
-    <div class="card-group">
-      
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <div class="card-group">
-      
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <div class="card-group">
-      
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <div class="card-group">
-      
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <div class="card-group">
-      
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  
-  
+<div class="week-forecast d-flex justify-content-between" id="forecast-row">
+  <div class="forecast-box col-2">
+    <h5 class="future-header">
+      <span id="future-date"></span>
+      <img id="future-icon" src="" alt="">
+    </h5>
+    <p class="weather-info">Temp: <span id="temp"></span>°F</p>
+    <p class="weather-info">Wind: <span id="wind"></span> MPH</p>
+    <p class="weather-info">Humidity: <span id="humidity"></span>%</p>
+  </div>
 </div>
     
   

@@ -3,7 +3,7 @@ var cityName;
 // created variable for API key
 var apiKey = "ba17ab7e50334efbdf75c59b609ec00e";
 var baseUrlForOneDay =
-  "https://api.openweathermap.org/data/2.5/weather?appid=" + apiKey + "&q=";
+  "https://api.openweathermap.org/data/2.5/weather?appid=" + apiKey + "&units=imperial&q=";
 
 // Reach into the HTMl and grab the search button
 var searchBtn = document.querySelector(".search");
@@ -25,20 +25,21 @@ searchBtn.addEventListener("click", function () {
   fetch(url)
     .then(function (response) {
       console.log(response);
-      // takes the response data and converts it tot he data you wanted
+      // takes the response data and converts it to the data you wanted
       return response.json();
     })
-    .then(function (bacon) {
-      console.log(bacon); // sanity check
-
+    .then(function (data) {
+      console.log(data); // sanity check
+document.getElementById("city-name").textContent = data.name
+document.getElementById("temp").textContent = data.main.temp+" F"
       // extract the data we want for today
 
       // put it somewhere on the screen
 
 
       // extract the lat and lon from the data
-var lon = bacon.coord.lon
-var lat = bacon.coord.lat
+var lon = data.coord.lon
+var lat = data.coord.lat
       // use it to create the other url
       var baseUrlForFiveDay = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey
 
